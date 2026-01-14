@@ -20,12 +20,16 @@ const Login = () => {
         if (!password) return setError("Please enter your password.");
 
         if (email === "admin@gmail.com" && password === "123456") {
-            // document.cookie = "auth=true; path=/";
-            document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
+            document.cookie = "auth=true; path=/";
+            // document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
 
-            setError("");
-            router.push("/all-products")
             toast.success("Logged in successfully!");
+setError("");
+setTimeout(() => {
+  window.location.href = "/all-products";
+}, 1000);
+
+            // router.push("/all-products")
         }
         else {
             setError("Invalid email or password");
@@ -33,7 +37,7 @@ const Login = () => {
     }
 
     return (
-        <div className="flex justify-center items-center min-h-screen ">
+        <div className="flex justify-center items-center min-h-screen bg-gradient">
             <div className="w-[88%] md:w-[40%] pb-3 rounded-[0.7rem] overflow-hidden shadow bg-white border border-gray-200 ">
                 <h2 className="text-3xl font-bold text-center pt-6"> Login to <span className="text-gradient">NovaCart</span></h2>
                 <div className="card-body text-gray-800 ">

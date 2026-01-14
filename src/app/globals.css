@@ -30,3 +30,8 @@
 .textarea{
     @apply w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 resize-none
 }
+
+/* BG */
+.bg-gradient {
+    @apply bg-linear-to-r from-purple-50 to-indigo-50
+}
