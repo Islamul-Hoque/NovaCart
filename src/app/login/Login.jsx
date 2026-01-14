@@ -36,7 +36,7 @@ const Login = () => {
     return (
         <div className="flex justify-center items-center min-h-screen ">
             <div className="w-[88%] md:w-[40%] pb-3 rounded-[0.7rem] overflow-hidden shadow bg-white border border-gray-200 ">
-                <h2 className="text-3xl font-bold text-center pt-6"> Login to <span className="text-gradient">NextShop</span></h2>
+                <h2 className="text-3xl font-bold text-center pt-6"> Login to <span className="text-gradient">NovaCart</span></h2>
                 <div className="card-body text-gray-800 ">
                     <form onSubmit={ handleSubmit }>
                         <fieldset className="fieldset">
