@@ -99,18 +99,20 @@ export default function Navbar() {
       ? "font-bold pb-1 text-[#632ee3] border-b-2 border-[#632ee3] transition-colors duration-200"
       : "text-gray-700 hover:text-[#632ee3] transition-colors duration-200";
 
-  useEffect(() => {
-    const cookies = document.cookie.split("; ");
-    const authCookie = cookies.find(row => row.startsWith("auth="));
-    if (authCookie) {
-      const value = authCookie.split("=")[1];
-      try {
-        setIsAuth(JSON.parse(value)); // { email: "..."}
-      } catch {
-        setIsAuth(true); // fallback if only "true"
-      }
+useEffect(() => {
+  const cookies = document.cookie.split("; ");
+  const authCookie = cookies.find(row => row.startsWith("auth="));
+  if (authCookie) {
+    const value = authCookie.split("=")[1];
+    try {
+      const user = JSON.parse(value);
+      setIsAuth(user); // { email: "..." }
+    } catch {
+      setIsAuth(null);
     }
-  }, []);
+  }
+}, []);
+
 
   const handleLogout = () => {
     document.cookie = "auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
