@@ -2,11 +2,9 @@
 
 import React, { useState, } from "react";
 import { useRouter, } from "next/navigation";
-
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-import { FcGoogle } from "react-icons/fc";
-import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
     const router = useRouter();
@@ -26,7 +24,8 @@ const Login = () => {
             document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
 
             setError("");
-            router.push("/products")
+            router.push("/all-products")
+            toast.success("Logged in successfully!");
         }
         else {
             setError("Invalid email or password");
@@ -44,14 +43,14 @@ const Login = () => {
                             <input value={email} onChange={(e) => { 
                                 setEmail(e.target.value)
                                 setError("");
-                                }}  type="email"  className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your email address"  />
+                                }}  type="email" className="inputField" placeholder="Enter your email address"  />
 
                             <div className="relative">
                                 <label className="label mb-[0.38rem] mt-2 text-gray-700 ">Password</label>
                                 <input value={password}  onChange={(e) =>{
                                     setPassword(e.target.value)
                                     setError("");
-                                    }} type={ show ? "text" : "password" }  className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your password" />
+                                    }} type={ show ? "text" : "password" }  className="inputField" placeholder="Enter your password" />
                                 <span onClick={()=> setShow(!show) } className="absolute text-[1rem] right-4 top-[2.77rem] cursor-pointer z-50 " > { show ? <FaEye/> : <IoEyeOff/> }  </span>
                             </div>
 
@@ -63,6 +62,7 @@ const Login = () => {
 
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };

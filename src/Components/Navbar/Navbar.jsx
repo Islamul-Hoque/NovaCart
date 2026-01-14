@@ -88,7 +88,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { toast } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 
 export default function Navbar() {
   const [isAuth, setIsAuth] = useState(null);
@@ -152,15 +152,8 @@ useEffect(() => {
               </div>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-56 shadow p-2">
-              <li>
-                <div className="flex flex-col">
-                  <span className="text-sm text-black">
-                    {isAuth.email || "Logged In"}
-                  </span>
-                </div>
-              </li>
+              <li><span className="text-sm ">  {isAuth.email || "Logged In"}  </span></li>
               <li><Link href="/add-product">Add Product</Link></li>
-              <li><Link href="/manage-products">Manage Products</Link></li>
               <li><div onClick={handleLogout} className="text-red-600 hover:bg-red-50">Logout</div></li>
             </ul>
           </div>
@@ -168,6 +161,7 @@ useEffect(() => {
           <Link href="/login" className="btn-secondary">Login</Link>
         )}
       </div>
+      <Toaster />
     </div>
   );
 }

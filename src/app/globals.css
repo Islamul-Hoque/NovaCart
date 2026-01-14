@@ -21,3 +21,12 @@
 .btn-secondary-w-full { 
     @apply btn  w-full shadow-none border-[1.5px] border-purple-600 text-transparent bg-clip-text bg-[linear-gradient(125.07deg,#632EE3,#9F62F2_100%)] hover:text-white hover:bg-[linear-gradient(125.07deg,#632EE3,#9F62F2_100%)] hover:bg-clip-border transition-all duration-300;
 }
+
+/* InputField */
+.inputField{
+    @apply input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full
+}
+
+.textarea{
+    @apply w-full border border-slate-300 rounded-lg px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 resize-none
+}
