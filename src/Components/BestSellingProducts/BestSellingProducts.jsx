@@ -49,7 +49,7 @@ const cardVariants = {
 
 const BestSellingProducts = () => {
     return (
-        <section className="pb-20 px-6 md:px-8 bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800"> 
+        <section className="pb-20 px-6 md:px-10 bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800"> 
             <div className="">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Our Top <span className="text-gradient"> 3 Bestsellers</span></h2>

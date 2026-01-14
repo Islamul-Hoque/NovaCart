@@ -1,4 +1,5 @@
 import BestSellingProducts from "@/Components/BestSellingProducts/BestSellingProducts";
+import CoreValues from "@/Components/CoreValues/CoreValues";
 import CustomerTestimonials from "@/Components/CustomerTestimonials/CustomerTestimonials";
 import FeaturedCategories from "@/Components/FeaturedCategories/FeaturedCategories";
 import Hero from "@/Components/Hero/Hero";
@@ -11,7 +12,7 @@ export default function Home() {
       <FeaturedCategories/>
       <BestSellingProducts/>
       <CustomerTestimonials />
-      {/* <CoreValues/> */}
+      <CoreValues/>
     </div>
   );
 }
