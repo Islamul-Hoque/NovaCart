@@ -4,9 +4,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { toast, Toaster } from "react-hot-toast";
 
-import { HiOutlineBookOpen, HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail } from "react-icons/hi";
+import { HiOutlineBookOpen, HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlineShoppingBag, HiOutlineShoppingCart, HiOutlineViewGrid } from "react-icons/hi";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { FaChalkboardTeacher, FaPlusCircle } from 'react-icons/fa';
+import { FaBoxOpen, FaChalkboardTeacher, FaPlusCircle } from 'react-icons/fa';
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 export default function Navbar() {
   
   const router = useRouter();
@@ -43,7 +44,10 @@ const handleLogout = () => {
 
     const links = <>
         <li><Link href="/" className={activeClass("/")}> <HiOutlineHome/> Home</Link></li>
-        <li><Link href="/all-products"className={activeClass("/all-products")}>ALL Products</Link></li>
+        <li><Link prefetch={false} href="/all-products"className={activeClass("/all-products")}>
+        
+        <MdOutlineProductionQuantityLimits />
+        ALL Products</Link></li>
         <li><Link href="/about"className={activeClass("/about")}><HiOutlineInformationCircle />About</Link></li>
         <li><Link href="/contact" className={activeClass("/contact")}><HiOutlineMail/>Contact</Link></li>
 
@@ -55,7 +59,7 @@ const handleLogout = () => {
       <div className="max-w-7xl mx-auto ">   
 
       
-        <div className="navbar px-6 md:px-10  ">
+        <div className="navbar paddingHorizontal  ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost md:hidden"> <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg> </div>

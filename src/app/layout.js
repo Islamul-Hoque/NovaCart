@@ -22,7 +22,9 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className}  antialiased`}
       >
         <Navbar/>
-        {children}
+        <div className="">
+          {children}
+        </div>
         <Footer/>
         <Toaster />
       </body>

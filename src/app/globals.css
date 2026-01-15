@@ -35,3 +35,8 @@
 .bg-gradient {
     @apply bg-linear-to-r from-purple-50 to-indigo-50
 }
+
+/* Px */
+.paddingHorizontal {
+    @apply px-6 md:px-10
+}
