@@ -21,13 +21,14 @@ const Login = () => {
 
         if (email === "admin@gmail.com" && password === "123456") {
             document.cookie = "auth=true; path=/";
+            document.cookie = `userEmail=${email}; path=/`;
             // document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
 
             toast.success("Logged in successfully!");
-setError("");
-setTimeout(() => {
-  window.location.href = "/all-products";
-}, 1000);
+            setError("");
+            setTimeout(() => {
+                window.location.href = "/all-products";
+            }, 1000);
 
             // router.push("/all-products")
         }

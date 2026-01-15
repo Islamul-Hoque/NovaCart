@@ -22,7 +22,7 @@ const Contact = () => {
         <section className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
             <div className="max-w-7xl mx-auto">
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">Contact <span className="text-gradient">NextShop</span></h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">Contact <span className="text-gradient">NovaCart</span></h2>
                     <p className="text-gray-600 w-[90%] text-center mx-auto mt-5 text-lg">Have questions or feedback? Fill out the form or reach us directly.</p>
                 </motion.div>
 

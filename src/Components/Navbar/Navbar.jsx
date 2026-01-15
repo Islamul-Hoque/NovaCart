@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { toast, Toaster } from "react-hot-toast";
 
-import { HiOutlineBookOpen, HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlineShoppingBag, HiOutlineShoppingCart, HiOutlineViewGrid } from "react-icons/hi";
+import { HiOutlineBookOpen, HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlinePlusCircle, HiOutlineShoppingBag, HiOutlineShoppingCart, HiOutlineViewGrid } from "react-icons/hi";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { FaBoxOpen, FaChalkboardTeacher, FaPlusCircle } from 'react-icons/fa';
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
@@ -32,9 +32,11 @@ useEffect(() => {
 
 const handleLogout = () => {
   document.cookie = "auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-  toast.success("You've been successfully logged out!");
-  setIsAuth(false);
-  router.push("/login")
+document.cookie = "userEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+toast.success("You've been successfully logged out!", { duration: 1000 });
+setTimeout(() => { router.push("/login"); }, 1000);
+// setIsAuth(false);
+// router.push("/login")
 
 //   setTimeout(() => {
 //     window.location.href = "/login"; 
@@ -44,14 +46,14 @@ const handleLogout = () => {
 
     const links = <>
         <li><Link href="/" className={activeClass("/")}> <HiOutlineHome/> Home</Link></li>
-        <li><Link prefetch={false} href="/all-products"className={activeClass("/all-products")}>
+        <li><Link prefetch={false} href="/all-products" className={activeClass("/all-products")}>
         
         <MdOutlineProductionQuantityLimits />
         ALL Products</Link></li>
         <li><Link href="/about"className={activeClass("/about")}><HiOutlineInformationCircle />About</Link></li>
         <li><Link href="/contact" className={activeClass("/contact")}><HiOutlineMail/>Contact</Link></li>
 
-        { isAuth  && <li><Link href="/add-product"><FaPlusCircle />Add Product</Link></li>  }
+        { isAuth  && <li><Link href="/add-product" className={activeClass("/add-product")}><HiOutlinePlusCircle />Add Product</Link></li>  }
     </>
 
     return (

@@ -13,7 +13,7 @@ export default function Hero() {
 
       <div className="relative z-40 text-center max-w-4xl text-white"> 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-md animate-fade-in-up">
-          Welcome to <span className="text-gradient">NextShop</span>
+          Welcome to <span className="text-gradient">NovaCart</span>
         </h1>
         <p className="sm:text-lg md:text-xl text-white mb-10 px-4 md:px-0 opacity-90 animate-fade-in-up animation-delay-300">  Discover cutting-edge products, manage your cart effortlessly, and experience a seamless shopping journey. Your next favorite item awaits! </p>
 

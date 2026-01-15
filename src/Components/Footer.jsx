@@ -12,7 +12,7 @@ const Footer = () => {
 
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2">
-            <h1 className="text-[1.8rem] text-white font-bold">  Next<span className="text-gradient">Shop</span> </h1>
+            <h1 className="text-[1.8rem] text-white font-bold">Nova<span className="text-gradient">Cart</span> </h1>
           </Link>
           <p className="text-gray-400 text-sm">  Discover the next generation of online shopping. Quality products, seamless experience.  </p>
         </div>
