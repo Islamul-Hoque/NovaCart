@@ -30,6 +30,3 @@ const ProductCard = ({product}) => {
 };
 
 export default ProductCard;
-
-
-// h-[18.1rem]
