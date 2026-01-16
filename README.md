@@ -4,10 +4,12 @@
 **NovaCart** is a modern full‑stack e‑commerce website that makes shopping and product management simple. Users can browse, search, and filter products with detailed info and images to guide decisions. Logged‑in users can add new products from the **Add Product** page, view their own added products in the **Manage Products** page, and delete them if needed. The platform focuses on speed, clean design, and intuitive navigation for a seamless experience.
 
 ---  
+## 🌐 Live Demo
+👉 [NovaCart (Vercel)](https://nova-cart-web.vercel.app)   
 
-**🔗 Live Demo:** [NovaCart (Vercel)](https://nova-cart-web.vercel.app)   
-📂 **Client Repository:** [NovaCart (Client)](https://github.com/Islamul-Hoque/NovaCart)  
-📂 **Server Repository:** [NovaCart (Server)](https://github.com/Islamul-Hoque/NovaCart-Server)
+## 📂 GitHub Repositories
+- Client Repository: [NovaCart (Client)](https://github.com/Islamul-Hoque/NovaCart)  
+- Server Repository: [NovaCart (Server)](https://github.com/Islamul-Hoque/NovaCart-Server)
 ---
 
 ## 📸 Screenshot
