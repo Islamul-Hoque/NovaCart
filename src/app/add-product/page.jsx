@@ -3,10 +3,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { FaPlus, FaSpinner } from "react-icons/fa";
 
 const AddProduct = () => {
-    const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
+    const [isLoading, setIsLoading] = useState(false);
     const [userEmail, setUserEmail] = useState("");
+    const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
 
     useEffect(() => {
     const cookies = document.cookie.split("; ");
@@ -18,7 +20,9 @@ const AddProduct = () => {
     }, []);
 
     const handleSubmit = async(e) => {
-        e.preventDefault();
+    e.preventDefault();
+    if (isLoading) return;  
+    setIsLoading(true);
 
     const imageUrl = e.target.image.value.trim()
     const newProductData = {
@@ -46,7 +50,11 @@ const AddProduct = () => {
         if (data.insertedId) { toast.success(`"${newProductData.title}" added successfully!`);
             e.target.reset();
         }
-    } catch (err) { toast.error(`Failed to add ${newProductData.title}. Try again!`) }
+    } catch (err) { 
+        toast.error(`Failed to add ${newProductData.title}. Try again!`) 
+    } finally { 
+        setIsLoading(false) 
+    }
 }
 
     return (
@@ -101,7 +109,11 @@ const AddProduct = () => {
                         className="textarea h-24" rows={3} required></textarea>
                     </div>
                 </div>
-                <div> <button type="submit" className="btn-primary-w-full mt-4">Add Product</button> </div>
+                <div> <button disabled={isLoading} type="submit" className="btn-primary-w-full mt-4">
+                    {isLoading ? 
+                        ( <>  <FaSpinner className="animate-spin" />  Adding... </> ) 
+                    : ( <> <FaPlus /> Add Product </>  )}
+                    </button> </div>
             </form>
         </div>
         <Toaster />

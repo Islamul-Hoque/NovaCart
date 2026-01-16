@@ -40,10 +40,10 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
           <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] transform transition duration-300 hover:scale-125"><FaFacebookF size={24} /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white transform transition duration-300 hover:scale-125"><FaXTwitter size={24} /></a>
+            <a href="https://www.facebook.com/ISLAMUL.HOQUE.ISHFAK.OFFICIAL" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] transform transition duration-300 hover:scale-125"><FaFacebookF size={24} /></a>
+            <a href="https://www.linkedin.com/in/Islamul-Hoque" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] transform transition duration-300 hover:scale-125"><FaLinkedinIn size={24} /></a>
+            <a href="https://x.com/ISHFAK2003" target="_blank" rel="noopener noreferrer" className="text-white transform transition duration-300 hover:scale-125"><FaXTwitter size={24} /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] transform transition duration-300 hover:scale-125"><FaInstagram size={24} /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] transform transition duration-300 hover:scale-125"><FaLinkedinIn size={24} /></a>
           </div>
         </div>
       </div>
