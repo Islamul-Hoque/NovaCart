@@ -1,33 +1,22 @@
-// import React from "react";
-// import Link from "next/link";
-
-// const Hero = () => {
-//   return (
-//     <section className="relative flex items-center justify-center min-h-[70vh] md:min-h-[65vh] px-6 md:px-16 overflow-hidden bg-linear-to-br from-[#1b003a] via-[#330058] to-[#5b008d]">
-//       <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
-
-//       <div className="absolute top-[5%] left-[5%] w-48 h-48 md:w-96 md:h-96 bg-[#9347d4] rounded-full mix-blend-lighten filter blur-4xl opacity-10 animate-blob z-30"></div>
-//       <div className="absolute bottom-[10%] right-[5%] w-64 h-64 md:w-[450px] md:h-[450px] bg-[#673ab7] rounded-full mix-blend-lighten filter blur-4xl opacity-10 animate-blob animation-delay-2000 z-30"></div>
-//       <div className="absolute top-[20%] right-[15%] w-36 h-36 md:w-72 md:h-72 bg-[#b39ddb] rounded-full mix-blend-lighten filter blur-4xl opacity-10 animate-blob animation-delay-4000 z-30"></div>
-//       <div className="absolute bottom-[0%] left-[20%] w-28 h-28 md:w-64 md:h-64 bg-[#7e57c2] rounded-full mix-blend-lighten filter blur-4xl opacity-20 animate-blob animation-delay-6000 z-30"></div>
-
-//       <div className="relative z-40 text-center max-w-4xl text-white"> 
-//         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-md animate-fade-in-up">
-//           Welcome to <span className="text-gradient">NovaCart</span>
-//         </h1>
-//         <p className="sm:text-lg md:text-xl text-white mb-10 px-4 md:px-0 opacity-90 animate-fade-in-up animation-delay-300">  Discover cutting-edge products, manage your cart effortlessly, and experience a seamless shopping journey. Your next favorite item awaits! </p>
-
-//         <Link href="/all-products" className="btn shadow-none text-white border-none bg-[linear-gradient(125.07deg,#632EE3,#9F62F2_100%)] hover:opacity-90" > Browse Products </Link>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Hero;
-
 "use client";
 import Link from "next/link";
-import { FaShoppingCart, FaPlay } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { FaShoppingCart } from "react-icons/fa";
+
+const heroImages = [
+  { src: "https://i.ibb.co.com/LDPxhyS5/PCD-KV-Galaxy-Watch8-1440x640-pc.jpg", alt: "Smart Watch" },
+  { src: "https://i.ibb.co.com/gL68nYjZ/Starmax-Product-Range-Summer-2024-2.png", alt: "Headphones" },
+  { src: "https://i.ibb.co.com/LXp72pFB/DSLR-1camera.jpg", alt: "DSLR Camera" },
+  { src: "https://i.blogs.es/e64415/mavic--1-/1366_2000.jpg", alt: "Drone" },
+  { src: "https://i.pinimg.com/1200x/d8/68/4a/d8684ac44bbe6cb2864843c283d2a827.jpg", alt: "Backpack" },
+  { src: "https://i.ibb.co.com/qF5Pm8w8/backpacks.jpg", alt: "Backpack" },
+  { src: "https://i.ibb.co.com/5x61vpyY/Wristwatch-01.png", alt: "Watch" },
+  { src: "https://i.pinimg.com/736x/7d/39/39/7d3939a449d49568723455058462e0c3.jpg", alt: "Keyboard" },
+  // { src: "https://i.ibb.co.com/V0BjLwYK/Guitar.jpg", alt: "Guitar" },
+];
 
 export default function Hero() {
   return (
@@ -36,13 +25,19 @@ export default function Hero() {
         <div className="text-center md:text-left order-2 md:order-1">
           <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4"> Explore <span className="text-[#b836fe]">NovaCart</span> — Your One‑Stop Marketplace </h1>
           <p className="md:text-md text-gray-300 mb-6 w-[95%]"> Discover premium products across Electronics, Home & Furniture, Audio & Music, Apparel, Photography, and Accessories. Shop smarter, faster, and easier with NovaCart. </p>
-          <Link href="/all-products" className="btn-primary mb-16 relative z-100"> <FaShoppingCart /> Explore Products</Link>
+          <Link href="/all-products" className="btn-primary mb-16 relative z-10"> <FaShoppingCart /> Explore Products</Link>
         </div>
 
-        <div className="flex justify-center md:justify-start order-1 md:order-2">
-          <img src="https://i.ibb.co.com/cXvpWk4K/img1.png" alt="Premium Heater"  className=" w-full  md:h-[16rem] rounded-xl shadow-2xl" />
+        <div className="md:w-full w-[85vw] mx-auto flex justify-center md:justify -start order-1 md:order-2">
+        <Swiper className="overflow-hidden rounded-xl px-2"  loop autoplay={{ delay: 1200 }} pagination={{ clickable: true }} modules={[Autoplay, Pagination]}>
+          {heroImages.map((item, i) => (
+            <SwiperSlide key={i}>
+              <img  src={item.src}  alt={item.alt}   className="w-full h-[12rem] sm:h-[14rem] md:h-[16rem] object-cover rounded-xl shadow-2xl" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         </div>
-      </div>
+        </div>
 
       <div className="absolute bottom-0 pointer-events-none left-0 w-full overflow-hidden z-0 leading-none">
         <svg viewBox="0 24 150 28" preserveAspectRatio="none" className="w-full h-30">
