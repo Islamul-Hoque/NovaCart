@@ -3,12 +3,14 @@ import React, {  useEffect, useState } from "react"
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { toast, Toaster } from "react-hot-toast";
-
-import { HiOutlineBookOpen, HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlinePlusCircle, HiOutlineShoppingBag, HiOutlineShoppingCart, HiOutlineViewGrid } from "react-icons/hi";
-import { LuLayoutDashboard } from "react-icons/lu";
-import { FaBoxOpen, FaChalkboardTeacher, FaPlusCircle } from 'react-icons/fa';
+import { FaTasks } from 'react-icons/fa';
+import { LogOut, LogIn } from 'lucide-react';
+import {  HiOutlineHome, HiOutlineInformationCircle, HiOutlineMail, HiOutlinePlusCircle, HiOutlineShoppingBag, HiOutlineShoppingCart, HiOutlineViewGrid } from "react-icons/hi";
+import { LayoutDashboard, Settings, Package, ClipboardList, Boxes } from 'lucide-react';
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
-export default function Navbar() {
+
+
+const Navbar = () => {
   
   const router = useRouter();
   const pathname = usePathname();
@@ -32,35 +34,35 @@ useEffect(() => {
 
 const handleLogout = () => {
   document.cookie = "auth=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-document.cookie = "userEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-toast.success("You've been successfully logged out!", { duration: 1000 });
-setTimeout(() => { router.push("/login"); }, 1000);
+  document.cookie = "userEmail=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+  toast.success("You've been successfully logged out!", { duration: 1000 });
+
+// setTimeout(() => { router.push("/login"); }, 1000);
 // setIsAuth(false);
 // router.push("/login")
 
-//   setTimeout(() => {
-//     window.location.href = "/login"; 
-//   }, 1000);
+  setTimeout(() => {
+    window.location.href = "/login"; 
+  }, 1000);
 };
 
 
     const links = <>
         <li><Link href="/" className={activeClass("/")}> <HiOutlineHome/> Home</Link></li>
-        <li><Link prefetch={false} href="/all-products" className={activeClass("/all-products")}>
-        
-        <MdOutlineProductionQuantityLimits />
-        ALL Products</Link></li>
+        <li><Link prefetch={false} href="/all-products" className={activeClass("/all-products")}> <MdOutlineProductionQuantityLimits /> ALL Products</Link></li>
+        { isAuth  &&
+        <>
+          <li><Link href="/add-product" className={activeClass("/add-product")} ><HiOutlinePlusCircle />Add Product</Link></li> 
+          <li ><Link href="/manage-products" className={activeClass("/manage-products")} > <LayoutDashboard size={14} />  Manage Products </Link></li>
+        </>
+        }
         <li><Link href="/about"className={activeClass("/about")}><HiOutlineInformationCircle />About</Link></li>
         <li><Link href="/contact" className={activeClass("/contact")}><HiOutlineMail/>Contact</Link></li>
-
-        { isAuth  && <li><Link href="/add-product" className={activeClass("/add-product")}><HiOutlinePlusCircle />Add Product</Link></li>  }
     </>
 
     return (
       <div className="bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto ">   
-
-      
         <div className="navbar paddingHorizontal  ">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -70,15 +72,13 @@ setTimeout(() => { router.push("/login"); }, 1000);
 
                 <Link href="/" className="flex items-center gap-2"> <h1 className="text-[1.3rem] text-black font-bold"> Nova<span className="text-gradient">Cart</span> </h1>   </Link>
             </div>
-
-           <div className="navbar-center hidden md:flex">  <ul className="font-semibold menu menu-horizontal px-1 gap-2"> {links} </ul> </div>
-
+            <div className="navbar-center hidden md:flex">  <ul className="font-semibold menu menu-horizontal px-1 gap-2"> {links} </ul> </div>
           <div className="navbar-end gap-3">
 
           { isAuth  ? (
-              <div onClick={handleLogout} className="btn-primary">Logout</div>
+              <div onClick={handleLogout} className="btn-primary"><LogOut size={16} /> Logout</div>
             ) : (
-              <Link href="/login" className="btn-primary">Login</Link>
+              <Link href="/login" className="btn-primary"> <LogIn size={16} /> Login</Link>
           )}
         </div>
         <Toaster />
@@ -87,3 +87,5 @@ setTimeout(() => { router.push("/login"); }, 1000);
       </div>
     );
 }
+
+export default Navbar;

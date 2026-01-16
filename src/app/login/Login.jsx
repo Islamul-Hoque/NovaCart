@@ -2,7 +2,7 @@
 
 import React, { useState, } from "react";
 import { useRouter, } from "next/navigation";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaSignInAlt, FaSpinner } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -12,28 +12,38 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [show, setShow] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault()
         
         if (!email) return setError("Please enter your email address.");
         if (!password) return setError("Please enter your password.");
+        setIsLoading(true)
 
         if (email === "admin@gmail.com" && password === "123456") {
             document.cookie = "auth=true; path=/";
             document.cookie = `userEmail=${email}; path=/`;
             // document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
 
-            toast.success("Logged in successfully!");
-            setError("");
+            // toast.success("Logged in successfully!");
+            // setError("");
+            // setTimeout(() => {
+            //     window.location.href = "/all-products";
+            // }, 100);
             setTimeout(() => {
-                window.location.href = "/all-products";
-            }, 1000);
+  window.location.href = "/all-products";
+  setTimeout(() => {
+    toast.success("Logged in successfully!");
+  }, 200);
+}, 100);
+
 
             // router.push("/all-products")
         }
         else {
             setError("Invalid email or password");
+            setIsLoading(false);
         }
     }
 
@@ -61,7 +71,10 @@ const Login = () => {
 
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
 
-                            <button type="submit" className="btn-primary-w-full mt-4">Login </button>
+                            <button disabled={isLoading} type="submit" className="btn-primary-w-full mt-4">
+                                {/* {isLoading ? "Logging in..." : "Login"} */}
+                                {isLoading ? ( <> <FaSpinner className="animate-spin" /> Logging in... </> ) : ( <> <FaSignInAlt /> Login </> )}
+                                 </button>
                         </fieldset>
                     </form>
 

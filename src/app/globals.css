@@ -40,3 +40,23 @@
 .paddingHorizontal {
     @apply px-6 md:px-10
 }
+
+/* Gap */
+.Gap{
+    @apply  gap-4 lg:gap-6
+}
+
+
+
+/* styles.css or globals.css */
+@keyframes waveMove {
+  from { transform: translateX(-90px); }
+  to { transform: translateX(85px); }
+}
+
+.l0 {
+  animation: waveMove 12s linear infinite;
+}
+.l1 {
+  animation: waveMove 15s linear infinite -2s;
+}

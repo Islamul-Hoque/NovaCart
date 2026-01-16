@@ -3,9 +3,15 @@ import { Suspense } from "react";
 import Loading from "../../Components/Loading"
 import Login from "./Login";
 
-export default function LoginPage() {
+
+const LoginPage = () => {
     return (
-        <Suspense fallback={<Loading/>}>
+        // <Suspense fallback={<Loading/>}>
+        //     <Login />
+        // </Suspense>
+        <div>
             <Login />
-        </Suspense>
+        </div>
 )}
+
+export default LoginPage;

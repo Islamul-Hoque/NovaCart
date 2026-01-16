@@ -50,7 +50,7 @@ const FeaturedCategories = () => {
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">Find exactly what you need from our curated collection of trending categories.</p>
                 </div>
 
-                <motion.div   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"  initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.3 }} transition={{ staggerChildren: 0.15 }}> 
+                <motion.div   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 Gap"  initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.3 }} transition={{ staggerChildren: 0.15 }}> 
                     {categories.map((category) => (
                         <motion.div  key={category.id} variants={cardVariants} className="group block p-6 rounded-xl border border-gray-200 bg-white shadow-lg transform transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-purple-200/50 cursor-pointer group-hover:delay-0">
                             <div className="text-center">

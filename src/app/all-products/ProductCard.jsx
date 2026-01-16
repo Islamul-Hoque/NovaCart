@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
 import { format } from "date-fns";
+import { Eye } from 'lucide-react';
 
 const ProductCard = ({product}) => {
     return (
@@ -23,7 +24,7 @@ const ProductCard = ({product}) => {
                             <p className="font-extrabold text-xl text-purple-700"> ${Number(product.price).toFixed(2)} </p>
                             <div className="flex items-center text-sm font-medium text-gray-700"><FaStar size={14} className="text-yellow-500 mr-1" />{" "}<span>{product.rating}</span></div>
                         </div>
-                        <Link href={`/all-products/${product._id}`} className="mt-4 btn-primary-w-full" > Details </Link>
+                        <Link href={`/all-products/${product._id}`} className="mt-4 btn-primary-w-full" > <Eye size={18} /> Details </Link>
                     </div>
         </div>
     );

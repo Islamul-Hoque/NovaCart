@@ -43,7 +43,7 @@ const CoreValues = () => {
                     <p className="text-gray-600 text-lg w-[90%] mx-auto"> Commitment to quality, reliability, and unparalleled customer service. </p>
                 </div>
 
-                <motion.div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
+                <motion.div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 Gap"initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
                     {values.map((value) => (
                         <motion.div key={value.id} variants={cardVariants} className="group flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-gray-50 shadow-md transform transition-all duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer">
                             <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full transition-all duration-300 group-hover:scale-110">

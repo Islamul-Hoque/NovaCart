@@ -52,11 +52,11 @@ const BestSellingProducts = () => {
         <section className="pb-20 paddingHorizontal bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800"> 
             <div className="">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Our Top <span className="text-gradient"> 4 Bestsellers</span></h2>
+                    <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Our Top 4<span className="text-gradient">  Bestsellers</span></h2>
                     <p className="text-gray-600 text-lg text-center w-[90%] mx-auto">Popular among our users. Explore these top selections even though they are currently out of stock</p>
                 </div>
 
-                <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
+                <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 Gap" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
                     {bestSellingProducts.map((product) => (
                         <motion.div key={product.id} variants={cardVariants} className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md transform transition-all duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer">
                             <div className="relative w-full  bg-gray-100 overflow-hidden">
