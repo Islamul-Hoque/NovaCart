@@ -7,7 +7,6 @@ import { IoEyeOff } from "react-icons/io5";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -24,7 +23,6 @@ const Login = () => {
         if (email === "admin@gmail.com" && password === "123456") {
             document.cookie = "auth=true; path=/";
             document.cookie = `userEmail=${email}; path=/`;
-            // document.cookie = `auth=${JSON.stringify({ email })}; path=/`;
 
             // toast.success("Logged in successfully!");
             // setError("");
@@ -32,14 +30,12 @@ const Login = () => {
             //     window.location.href = "/all-products";
             // }, 100);
             setTimeout(() => {
-  window.location.href = "/all-products";
-  setTimeout(() => {
-    toast.success("Logged in successfully!");
-  }, 200);
-}, 100);
+                window.location.href = "/all-products";
+                setTimeout(() => {
+                    toast.success("Logged in successfully!");
+                }, 200);
+            }, 100);
 
-
-            // router.push("/all-products")
         }
         else {
             setError("Invalid email or password");
@@ -72,9 +68,8 @@ const Login = () => {
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
 
                             <button disabled={isLoading} type="submit" className="btn-primary-w-full mt-4">
-                                {/* {isLoading ? "Logging in..." : "Login"} */}
                                 {isLoading ? ( <> <FaSpinner className="animate-spin" /> Logging in... </> ) : ( <> <FaSignInAlt /> Login </> )}
-                                 </button>
+                            </button>
                         </fieldset>
                     </form>
 

@@ -6,17 +6,12 @@ import { MdMessage } from "react-icons/md";
 import { IoIosMail } from "react-icons/io";
 import toast, { Toaster } from "react-hot-toast";
 
-
-
 const Contact = () => {
-    // const {user, loading} = useContext(AuthContext);
-    // if(loading) return <Loading/>
-
     const handleSubmit = (e) => {
         e.preventDefault()
         toast.success('Message sent successfully')
         e.target.reset()
-}
+    }
 
     return (
         <section className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">

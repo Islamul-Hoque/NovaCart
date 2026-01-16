@@ -46,8 +46,6 @@
     @apply  gap-4 lg:gap-6
 }
 
-
-
 /* styles.css or globals.css */
 @keyframes waveMove {
   from { transform: translateX(-90px); }

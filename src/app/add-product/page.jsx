@@ -8,19 +8,15 @@ const AddProduct = () => {
     const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
     const [userEmail, setUserEmail] = useState("");
 
-  useEffect(() => {
+    useEffect(() => {
     const cookies = document.cookie.split("; ");
     const emailCookie = cookies.find(row => row.startsWith("userEmail="));
     if (emailCookie) {
-      const value = emailCookie.split("=")[1];
-      setUserEmail(value);
-      console.log(value);
-      
+        const value = emailCookie.split("=")[1];
+        setUserEmail(value);
     }
-  }, []);
+    }, []);
 
-
-    // if(loading) return <Loading/>
     const handleSubmit = async(e) => {
         e.preventDefault();
 
@@ -28,7 +24,6 @@ const AddProduct = () => {
     const newProductData = {
         title: e.target.title.value,
         price: parseFloat(e.target.price.value),
-        // desc: e.target.desc.value,
         full_description: e.target.full_description.value,
         category: e.target.category.value,
         image: imageUrl ,
@@ -100,10 +95,6 @@ const AddProduct = () => {
                         <label className="label font-semibold mb-1">Features (comma separated)</label>
                         <input type="text" name="features" placeholder="25 Liter Capacity, Multiple Power Settings, Easy Clean Interior" className="inputField" required />
                     </div>
-                    {/* <div className="md:col-span-2">
-                        <label className="label font-semibold mb-1">Short Description</label>
-                        <input type="text" name="desc" placeholder="Enter a brief description" className="inputField" required />
-                    </div> */}
                     <div className="md:col-span-2">
                         <label className="label font-semibold mb-1">Full Description</label>
                         <textarea name="full_description" placeholder="Enter full product details" 
@@ -113,7 +104,7 @@ const AddProduct = () => {
                 <div> <button type="submit" className="btn-primary-w-full mt-4">Add Product</button> </div>
             </form>
         </div>
-         <Toaster />
+        <Toaster />
         </div>
     );    
 };

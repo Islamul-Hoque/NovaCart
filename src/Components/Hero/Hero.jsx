@@ -33,48 +33,22 @@ export default function Hero() {
   return (
     <section className="relative min-h-[65vh] paddingHorizontal overflow-hidden bg-gradient-to-br from-[#1b003a] via-[#330058] to-[#5b008d] text-white ">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center pt-10">
-  
-  {/* Left: Text Content */}
-  <div className="text-center md:text-left order-2 md:order-1">
-    <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
-      Explore <span className="text-gradient">NovaCart</span> — Your One‑Stop Marketplace
-    </h1>
-    <p className="md:text-md text-gray-300 mb-6 w-[95%]">
-      Discover premium products across Electronics, Home & Furniture, Audio & Music, Apparel, Photography, and Accessories. 
-      Shop smarter, faster, and easier with NovaCart.
-    </p>
+        <div className="text-center md:text-left order-2 md:order-1">
+          <h1 className="text-2xl sm:text-3xl font-extrabold leading-tight mb-4"> Explore <span className="text-[#b836fe]">NovaCart</span> — Your One‑Stop Marketplace </h1>
+          <p className="md:text-md text-gray-300 mb-6 w-[95%]"> Discover premium products across Electronics, Home & Furniture, Audio & Music, Apparel, Photography, and Accessories. Shop smarter, faster, and easier with NovaCart. </p>
+          <Link href="/all-products" className="btn-primary mb-16 relative z-100"> <FaShoppingCart /> Explore Products</Link>
+        </div>
 
-<Link href="/all-products" className="btn-primary mb-16 relative z-100"> <FaShoppingCart /> Explore Products</Link>
-  </div>
+        <div className="flex justify-center md:justify-start order-1 md:order-2">
+          <img src="https://i.ibb.co.com/cXvpWk4K/img1.png" alt="Premium Heater"  className=" w-full  md:h-[16rem] rounded-xl shadow-2xl" />
+        </div>
+      </div>
 
-  
-  <div className="flex justify-center md:justify-start order-1 md:order-2">
-    <img
-      src="https://i.ibb.co.com/cXvpWk4K/img1.png"
-      alt="Premium Heater"
-      className=" w-full  md:h-[16rem] rounded-xl shadow-2xl"
-    />
-  </div>
-</div>
-
-
-      
       <div className="absolute bottom-0 pointer-events-none left-0 w-full overflow-hidden z-0 leading-none">
         <svg viewBox="0 24 150 28" preserveAspectRatio="none" className="w-full h-30">
-          <defs>
-            <linearGradient id="g1768574577801">
-              <stop stopColor="#8060a4" />
-              <stop offset="1" stopColor="#ba45b0" />
-            </linearGradient>
-            <path
-              id="w"
-              d="M -160 40 Q -116 30 -72 40 Q -28 50 16 40 Q 60 30 104 40 Q 148 50 192 40 L 192 80 L -160 80 Z"
-            />
-          </defs>
-          <g>
-            <use href="#w" x="48" y="0" fill="url(#g1768574577801)" opacity="0.3" className="l0" />
-            <use href="#w" x="68" y="3" fill="url(#g1768574577801)" opacity="0.4" className="l1" />
-          </g>
+          <defs> <linearGradient id="g1768574577801"> <stop stopColor="#8060a4" /> <stop offset="1" stopColor="#ba45b0" /> </linearGradient>
+            <path id="w" d="M -160 40 Q -116 30 -72 40 Q -28 50 16 40 Q 60 30 104 40 Q 148 50 192 40 L 192 80 L -160 80 Z" />
+          </defs> <g> <use href="#w" x="48" y="0" fill="url(#g1768574577801)" opacity="0.3" className="l0" />  <use href="#w" x="68" y="3" fill="url(#g1768574577801)" opacity="0.4" className="l1" />  </g>
         </svg>
       </div>
     </section>

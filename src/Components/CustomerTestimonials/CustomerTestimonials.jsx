@@ -59,7 +59,6 @@ const CustomerTestimonials = () => {
                   <div className="text-left">
                     <h3 className="text-xl font-bold text-gray-900">{t.name}</h3>
                     <p className="text-gray-500 text-sm">{t.position}</p>
-                    {/* <p className="text-gray-400 text-sm">{t.date}</p> */}
                   </div>
                 </div>
               </div>

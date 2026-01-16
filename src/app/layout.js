@@ -4,8 +4,6 @@ import Navbar from "@/Components/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/Components/Footer";
 
-
-
 const poppins = Poppins({
   weight: '400',
   subsets: ['latin'],
