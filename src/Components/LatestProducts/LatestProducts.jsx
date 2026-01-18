@@ -26,7 +26,7 @@ const LatestProducts = () => {
     }, []);
 
     return (
-        <div className="py-16 paddingHorizontal bg-gradient">
+        <div className="pt-16 paddingHorizontal bg-gradient">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-3 text-center"> New <span className="text-gradient">Arrivals</span></h2>
             <p className="text-center text-gray-600 mb-8"> Shop the latest products, fresh in stock</p>
 
